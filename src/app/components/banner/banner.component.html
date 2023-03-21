@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" [routerLink]="['/']">eKaushalya</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div *ngIf="isLoggedIn" style="color:white;text-align: center;">Welcome -{{user.name}} </div>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#">About Us</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" [routerLink]="['signup']">Sign Up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['login']">Login</a>
+          </li>
+          <li  *ngIf="isLoggedIn" class="nav-item">
+            <a class="nav-link" [routerLink]="['mycourses']">My Course</a>
+          </li>
+          <li  *ngIf="isLoggedIn" class="nav-item">
+            <a class="nav-link" [routerLink]="['logout']">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+

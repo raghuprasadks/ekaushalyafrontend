@@ -1,0 +1,30 @@
+<div class="container-fluid mt-2">
+  <div class="row">
+    <div class="col-8">
+      <div class="embed-responsive embed-responsive-16by9 mb-4">
+        <youtube-player
+          [videoId]="selectedContent?.videourl"
+          (ready)="onReady($event)"
+          (stateChange)="onStateChange($event)"
+          [playerVars]="playerVars"
+          class="embed-responsive-item"
+        >
+        </youtube-player>
+      </div> 
+      <!-- <button (click)="playVideo()">Play</button> -->
+    </div>
+    <div class="col-4">
+      <div class="list-group">
+        <button
+          *ngFor="let content of content"
+          type="button"
+          class="list-group-item list-group-item-action"
+          [class.active]="content === selectedContent"
+          (click)="onSelect(content)"
+        >
+          {{ content?.topic }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

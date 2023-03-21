@@ -1,0 +1,8 @@
+<div *ngIf="!isAdmin">
+    <app-banner></app-banner>
+</div>
+<div *ngIf="isAdmin">
+    <app-adminbanner></app-adminbanner>
+</div>
+
+<router-outlet></router-outlet>

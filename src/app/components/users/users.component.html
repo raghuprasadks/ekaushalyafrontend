@@ -1,0 +1,56 @@
+<div class="jumbotron bg-secondary">
+  <h1 class="display-6 text-center">eKaushalya-Your Learning Partner</h1>
+  <p class="lead text-center">
+    Skill Up-Skill and Re-Skill with us to sharpen your career
+  </p>
+  <hr class="my-4" />
+</div>
+
+<div class="container-fluid">
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+    <div class="col" *ngFor="let con of courses">
+      <div class="card">
+        <div class="embed-responsive embed-responsive-16by9">
+          <youtube-player
+            *ngIf="afterViewInit"
+            #player
+            autoplay
+            loop
+            controls
+            muted
+            videoId="{{ con.videourl }}"
+            suggestedQuality="medium"
+            (ready)="onReady($event)"
+            (stateChange)="onStateChange($event)"
+            class="video-fluid z-depth-1"
+            allowfullscreen
+          >
+          </youtube-player>
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">
+            Course Name:-
+            {{ con.name }}
+          </h4>
+          <p class="card-text">
+            Description:-
+            {{ con.description }}
+          </p>
+          <p class="card-text">
+            IsPaid:-
+            {{ con.isPaid }}
+          </p>
+          <p class="card-text">
+            IsActive:-
+            {{ con.isActive }}
+          </p>
+          <p class="card-text">
+            Price:-
+            {{ con.price }}
+          </p>
+          <a class="btn btn-primary" (click)="onBuy(con.id)">Buy Course</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,80 @@
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="card-title text-center">
+            <!-- <h4>Mapping</h4> -->
+            <h1>Course Content</h1>
+          </div>
+          <div class="card-body">
+            <div>
+              <label for="course-select">Course:</label>
+              <select
+                [(ngModel)]="selectedCourse"
+                (change)="selectedCourse && onCourseSelected(selectedCourse)"
+              >
+                <option *ngFor="let course of courses" [ngValue]="course">
+                  {{ course.name }}
+                </option>
+              </select>
+            </div>
+
+            <div class="card-body">
+              <div>
+                <label for="content-select">Content:</label>
+                <select
+                  [(ngModel)]="selectedContent"
+                  (change)="selectedContent && onContentSelected(selectedContent)"
+                >
+                  <option *ngFor="let content of contents" [ngValue]="content">
+                    {{ content.topic }}
+                  </option>
+                </select>
+              </div>
+    
+
+  <!--
+            <div class="form-group">
+              <label for="content-select">Select Content:</label>
+              <select
+                [(ngModel)]="selectedContent"
+              </select>  (change)="selectedContent && onContentSelected(selectedContent)"
+              >
+                <option *ngFor="let content of contents" [ngValue]="content.id">
+                  {{ content.topic }}
+                </option>
+              </select>
+            </div>
+  
+            <div>
+              -->
+              <button
+                (click)="onSave()"
+                ng-disabled="!selectedCourse || !selectedContent"
+              >
+                Save
+              </button>
+              <button
+                (click)="view()"
+                ng-disabled="!selectedCourse || !selectedContent"
+              >
+                View
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- // "coursecontents": [
+    //   {
+    //     "courseId": 1,
+    //     "contentId": 1
+    //   },
+    //   {
+    //     "courseId": 1,
+    //     "contentId": 2
+    //   }
+    // ] -->
+  
