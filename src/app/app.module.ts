@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
-import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
-//iport { YouTubePlayerModule } from '@angular/youtube-player';
+//import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
+//import { YouTubePlayerModule } from '@angular/youtube-player';
+import {YouTubePlayerModule} from '@angular/youtube-player';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -46,8 +47,9 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
   ],
   imports: [
     BrowserModule,
-    NgxYoutubePlayerModule.forRoot(),
+    //NgxYoutubePlayerModule.forRoot(),
     //YouTubePlayerModule.forRoot(),
+    YouTubePlayerModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,   
