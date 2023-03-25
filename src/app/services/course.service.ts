@@ -58,7 +58,7 @@ export class CourseService {
      */
   buyCourse(data: any): Observable<any> {
     console.log('buy :##', data)
-    return this.httpclient.post<any>('https://localhost:44399/api/mycourses/Postmycourse', data);
+    return this.httpclient.post<any>('https://ekaushalyawebapi.azurewebsites.net/api/mycourses/Postmycourse', data);
 
   }
 
